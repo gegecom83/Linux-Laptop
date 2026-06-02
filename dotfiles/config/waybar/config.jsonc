@@ -1,0 +1,85 @@
+// -*- mode: jsonc -*-
+{
+    "height": 30,
+    "spacing": 4,
+    "width": 1346,
+    "margin-top": 2,
+    "margin-bottom": 0,
+    "modules-left": [
+        "niri/workspaces",
+        "niri/window"
+    ],
+    "modules-center": [
+        "clock#clock2"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "power-profiles-daemon",
+        "tray",       
+        "pulseaudio",
+        "battery",
+        "clock"
+    ],
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "tray": {
+        "spacing": 10,
+        "icon-size": 13
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip": false        
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon}",
+        "format-full": "{icon}",
+        "format-charging": "",
+        "format-plugged": "",
+        "format-alt": "{time} {icon}",
+        "tooltip-format": "{capacity}%",
+        "format-icons": ["", "", "", "", ""]
+    },    
+    "clock#clock2": {
+        "format": "{:%a, %b %d}",
+        "tooltip": true,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "mode": "year",
+            "mode-mon-col": 3,
+            "weeks-pos": "right",
+            "on-scroll": 1,
+            "format": {
+                "today": "<span color='#0461be'><b><u>{}</u></b></span>"
+            }
+        }
+    },
+    "pulseaudio": {
+        "format": "{icon}",
+        "format-muted": "",
+        "tooltip-format": "{volume}% ({desc})",
+        "format-icons": {
+            "default": ["", "", ""]
+        },
+    }
+}
