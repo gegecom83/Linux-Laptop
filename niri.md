@@ -257,7 +257,7 @@ sudo reboot
 - Clone the repository
 
 ```bash
-git clone https://github.com/gegecom83/dotfiles
+git clone https://github.com/gegecom83/Linux-Laptop.git
 ```
 
 ## My customization
