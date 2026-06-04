@@ -10,13 +10,13 @@
         "niri/window"
     ],
     "modules-center": [
-        "clock#clock2"
+        "clock#clock2",
+        "idle_inhibitor"
     ],
     "modules-right": [
-        "idle_inhibitor",
-        "power-profiles-daemon",
-        "tray",       
+        "tray",
         "pulseaudio",
+        "power-profiles-daemon",
         "battery",
         "clock"
     ],
@@ -80,6 +80,6 @@
         "tooltip-format": "{volume}% ({desc})",
         "format-icons": {
             "default": ["", "", ""]
-        },
+        }
     }
 }

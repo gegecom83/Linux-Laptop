@@ -121,7 +121,7 @@ sudo systemctl enable --now power-profiles-daemon.service
 - niri with a few additional packages according to my personal preferences.
 
 ```bash
-sudo pacman -S niri alacritty fuzzel mako swaybg swayidle waybar rofi libnotify playerctl brightnessctl blueman xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-user-dirs polkit-gnome pavucontrol xorg-xwayland  xwayland-satellite firefox thunderbird thunar mousepad xfce4-terminal network-manager-applet zip unrar 7zip unzip ristretto thunar-archive-plugin gvfs xarchiver gnome-keyring git base-devel devtools man-db man-pages bash-completion pacman-contrib ntfs-3g fuse2 fuse2fs fuse3 exfatprogs libappimage gspell wl-clipboard wl-clip-persist libadwaita adwaita-cursors adwaita-fonts adwaita-icon-theme gnome-themes-extra papirus-icon-theme keepassxc otf-font-awesome htop mpv ttf-nerd-fonts-symbols xdg-utils
+sudo pacman -S niri alacritty fuzzel mako swaybg swayidle waybar rofi libnotify playerctl brightnessctl blueman xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-user-dirs polkit-gnome pavucontrol xorg-xwayland  xwayland-satellite firefox thunderbird thunar mousepad xfce4-terminal network-manager-applet zip unrar 7zip unzip ristretto gimp thunar-archive-plugin gvfs xarchiver gnome-keyring git base-devel devtools man-db man-pages bash-completion pacman-contrib ntfs-3g fuse2 fuse2fs fuse3 exfatprogs libappimage gspell wl-clipboard wl-clip-persist libadwaita adwaita-cursors adwaita-fonts adwaita-icon-theme gnome-themes-extra papirus-icon-theme keepassxc otf-font-awesome htop mpv ttf-nerd-fonts-symbols xdg-utils
 ```
 
 ### Autostart niri after logging
