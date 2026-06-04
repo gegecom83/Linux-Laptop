@@ -36,10 +36,11 @@ window#waybar {
     background-color: #eb4d4b;
 }
 
+#clock#clock2,
 #idle_inhibitor,
-#power-profiles-daemon,
-#pulseaudio,
 #tray,
+#pulseaudio,
+#power-profiles-daemon,
 #battery,
 #clock,
 
@@ -48,27 +49,63 @@ window#waybar {
     margin: 0 4px;
 }
 
-/* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
     margin-left: 0;
 }
 
-/* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child > #workspaces {
     margin-right: 0;
 }
 
 #clock {
     background-color: transparent;
-}
-
-#battery.critical:not(.charging) {
-    background-color:transparent;
     color: #ffffff;
 }
 
+#clock#clock2 {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#battery {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+#battery.charging, #battery.plugged {
+    background-color: transparent;
+    color: #ffffff;
+}
+
+@keyframes blink {
+    to {
+        background-color: transparent;
+        color: #000000;
+    }
+}
+
+#battery.warning:not(.charging) {
+    background-color: transparent;
+    color: #ffffff;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#battery.critical:not(.charging) {
+    background-color: transparent;
+    color: #f53c3c;
+    animation-name: blink;
+    animation-duration: 0.5s;
+    animation-timing-function: steps(12);
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
 #power-profiles-daemon {
-        background-color:transparent;
+        background-color: transparent;
     color: #ffffff;
 }
 
@@ -85,6 +122,10 @@ window#waybar {
 #power-profiles-daemon.power-saver {
     background-color: transparent;
     color: #ffffff;
+}
+
+label:focus {
+    background-color: transparent;
 }
 
 #pulseaudio {

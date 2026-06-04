@@ -48,20 +48,22 @@
     },
     "battery": {
         "states": {
-            // "good": 95,
             "warning": 30,
             "critical": 15
         },
         "format": "{icon}",
-        "format-full": "{icon}",
-        "format-charging": "",
         "format-plugged": "",
+        "format-charging": "{icon}",
         "format-alt": "{time} {icon}",
-        "tooltip-format": "{capacity}%",
-        "format-icons": ["", "", "", "", ""]
-    },    
+        "tooltip-format": "Capacity: {capacity}%\nPower: {power} Watts\nCycles: {cycles}\nStatus: {timeTo}",
+        "interval": 60,
+        "format-icons": {
+        "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        }
+    },
     "clock#clock2": {
-        "format": "{:%a, %b %d}",
+        "format": "{:%a, %b %d %Y}",
         "tooltip": true,
         "tooltip-format": "<tt>{calendar}</tt>",
         "calendar": {
