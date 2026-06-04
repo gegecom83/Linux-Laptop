@@ -2,7 +2,7 @@
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
     "window.menuBarVisibility": "compact", // or "hidden" to completely disable menubar.
-    "window.menuStyle": "custom" // required for "compact" .menuBarVisibility.
+    "window.menuStyle": "custom", // required for "compact" .menuBarVisibility.
     "chat.titleBar.signIn.enabled": false,
     "workbench.browser.showInTitleBar": false,
     "window.controlsStyle": "hidden",
