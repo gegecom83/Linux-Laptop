@@ -9,7 +9,7 @@ DEFAULT_STEP=5
 get_brightness() {
     max=$(brightnessctl max)
     cur=$(brightnessctl get)
-    echo $(( cur * 100 / max ))
+    echo $(( (cur * 100 + max / 2) / max ))
 }
 
 CHANGE=0
@@ -35,7 +35,7 @@ done
 
 if [ "$CHANGE" -ne 0 ]; then
     if [ "$CHANGE" -gt 0 ]; then
-        brightnessctl -q set "+${CHANGE}%"
+        brightnessctl -q set "${CHANGE}%+"
     else
         ABS=${CHANGE#-}
         brightnessctl -q set "${ABS}%-"
