@@ -373,7 +373,7 @@ export QT_QPA_PLATFORMTHEME=qt6ct
 ### Qt 6 integration configuration
 
 ```bash
-sudo pacman -S plasma-integration
+sudo pacman -S plasma-integration kvantum
 ```
 
 ### Fix error dbus-broker-launch
