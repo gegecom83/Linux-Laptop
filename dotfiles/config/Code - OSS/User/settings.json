@@ -1,14 +1,7 @@
 {
     "window.titleBarStyle": "native",
     "window.customTitleBarVisibility": "never",
-    "window.menuBarVisibility": "compact", // or "hidden" to completely disable menubar.
-    "window.menuStyle": "custom", // required for "compact" .menuBarVisibility.
-    "chat.titleBar.signIn.enabled": false,
-    "workbench.browser.showInTitleBar": false,
-    "window.controlsStyle": "hidden",
-    "editor.minimap.enabled": false,
-    "window.autoDetectColorScheme": true,
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "debug.disassemblyView.showSourceCode": false
+    "window.menuBarVisibility": "compact",
+    "window.menuStyle": "custom",
+    "workbench.colorTheme": "Dracula Theme"
 }

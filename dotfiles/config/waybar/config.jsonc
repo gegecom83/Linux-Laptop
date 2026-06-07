@@ -1,30 +1,88 @@
 // -*- mode: jsonc -*-
 {
+    "position": "bottom",
     "height": 30,
+    "width": 1366,
     "spacing": 4,
-    "width": 1346,
-    "margin-top": 2,
-    "margin-bottom": 0,
     "modules-left": [
-        "niri/workspaces",
-        "niri/window"
+        "niri/workspaces"
     ],
     "modules-center": [
-        "clock#clock2",
-        "idle_inhibitor"
+        "niri/window"
     ],
     "modules-right": [
-        "tray",
+        "idle_inhibitor",
         "pulseaudio",
+        "network",
         "power-profiles-daemon",
+        "cpu",
+        "memory",
+        "disk",
+        "temperature",
+        "backlight",
+        "niri/language",
         "battery",
-        "clock"
+        "clock",
+        "tray"
     ],
+    "niri/language": {
+        "format": "{short}"
+    },
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {
             "activated": "",
             "deactivated": ""
+        }
+    },
+    "tray": {
+        "icon-size": 13,
+        "spacing": 10,
+    },
+    "clock": {
+        "format": "{:%I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%a, %b %d %Y}"
+    },
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": true
+    },
+    "memory": {
+        "format": "{}% "
+    },
+    "disk": {
+        "interval": 30,
+        "format": "{percentage_used}% 󰋊",
+        "tooltip-format": "{specific_free:0.2f} GiB out of {specific_total:0.2f} GiB available",
+        "unit": "GB"
+    },
+    "temperature": {
+        "hwmon-path": "/sys/devices/virtual/thermal/thermal_zone0/hwmon1/temp1_input",
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "tooltip": false,
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "tooltip": false,
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% {icon}",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "tooltip-format": "Capacity: {capacity}%\nPower: {power} Watts\nStatus: {timeTo}",
+        "format-icons": {
+        "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+        "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
         }
     },
     "power-profiles-daemon": {
@@ -38,50 +96,28 @@
         "power-saver": ""
       }
     },
-    "tray": {
-        "spacing": 10,
-        "icon-size": 13
-    },
-    "clock": {
-        "format": "{:%I:%M %p}",
-        "tooltip": false        
-    },
-    "battery": {
-        "states": {
-            "warning": 30,
-            "critical": 15
-        },
-        "format": "{icon}",
-        "format-plugged": "",
-        "format-charging": "{icon}",
-        "format-alt": "{time} {icon}",
-        "tooltip-format": "Capacity: {capacity}%\nPower: {power} Watts\nCycles: {cycles}\nStatus: {timeTo}",
-        "interval": 60,
-        "format-icons": {
-        "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
-        "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
-        }
-    },
-    "clock#clock2": {
-        "format": "{:%a, %b %d %Y}",
-        "tooltip": true,
-        "tooltip-format": "<tt>{calendar}</tt>",
-        "calendar": {
-            "mode": "year",
-            "mode-mon-col": 3,
-            "weeks-pos": "right",
-            "on-scroll": 1,
-            "format": {
-                "today": "<span color='#0461be'><b><u>{}</u></b></span>"
-            }
-        }
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
-        "format": "{icon}",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon}",
+        "format-bluetooth-muted": " {icon}",
         "format-muted": "",
-        "tooltip-format": "{volume}% ({desc})",
         "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
             "default": ["", "", ""]
-        }
+        },
+        "on-click": "pavucontrol"
     }
 }

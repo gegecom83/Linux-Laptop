@@ -17,33 +17,30 @@ input {
 }
 
 // screen config Run `niri msg outputs`
-output "eDP-1" {
-    mode "1366x768@59.998"
+output "LVDS-1" {
+    mode "1366x768@59.959"
+    scale 1
+    transform "normal"
 }
 
 // Windows layout config
 layout {
     gaps 10
+
     center-focused-column "never"
 
     default-column-width { proportion 0.5; }
-   
-    border {
-        on
-        width 1
-        active-color "#0461be"
-        inactive-color "#7e7e7e"
-    }
+
     focus-ring {
-        off
+    on   
         width 1
-        active-color "#0461be"
-        inactive-color "#7e7e7e"
+
+        active-color "#7fc8ff"
+        active-gradient from="#ffb86c" to="#bd93f9" angle=45 relative-to="workspace-view"
     }
 }
 
 window-rule {
-    geometry-corner-radius 5
     clip-to-geometry true
 }
 
@@ -53,7 +50,7 @@ spawn-at-startup "waybar"
 spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
 spawn-at-startup "swayidle" "-w" "timeout" "660" "niri msg action power-off-monitors" "timeout" "600" "swaylock -f" "before-sleep" "swaylock -f"
 
-spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/backgrounds/totoro.jpg"
+spawn-sh-at-startup "swaybg -m fill -i ~/Pictures/backgrounds/rm-rf.png"
 spawn-sh-at-startup "sleep 3 && arch-update --tray"
 spawn-sh-at-startup "wl-paste -t text --watch clipman store --no-persist"
 spawn-sh-at-startup "wl-clip-persist --clipboard regular"
@@ -84,21 +81,6 @@ window-rule {
     match app-id=r#"thunar$"# title=".*Progress.*"
     match app-id=r#"thunar$"# title=".*Confirm.*"
     match app-id=r#"thunar$"# title=".*Rename.*"
-
-    open-floating true
-}
-
-window-rule {
-    match app-id=r#"thunar$"# title=".*Warning.*"
-    match app-id=r#"thunar$"# title=".*Empty Trash.*"
-
-    border {                                                                                              
-        off                                                                                               
-    }
-
-    focus-ring {
-        off
-    }
 
     open-floating true
 }
@@ -155,20 +137,6 @@ binds {
     Mod+Ctrl+Home { move-column-to-first; }
     Mod+Ctrl+End  { move-column-to-last; }
 
-    Mod+Shift+Left  { focus-monitor-left; }
-    Mod+Shift+Down  { focus-monitor-down; }
-    Mod+Shift+Up    { focus-monitor-up; }
-    Mod+Shift+Right { focus-monitor-right; }
-
-    Mod+Shift+Ctrl+Left  { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+Down  { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+Up    { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+Right { move-column-to-monitor-right; }
-    Mod+Shift+Ctrl+H     { move-column-to-monitor-left; }
-    Mod+Shift+Ctrl+J     { move-column-to-monitor-down; }
-    Mod+Shift+Ctrl+K     { move-column-to-monitor-up; }
-    Mod+Shift+Ctrl+L     { move-column-to-monitor-right; }
-
     Mod+Page_Down      { focus-workspace-down; }
     Mod+Page_Up        { focus-workspace-up; }
     Mod+Ctrl+Page_Down { move-column-to-workspace-down; }
@@ -216,8 +184,8 @@ binds {
     Mod+Ctrl+underscore { move-column-to-workspace 8; }
     Mod+Ctrl+ccedilla { move-column-to-workspace 9; }
 
-    Mod+Shift+A  { consume-or-expel-window-left; }
-    Mod+Shift+P { consume-or-expel-window-right; }
+    Mod+Shift+Left  { consume-or-expel-window-left; }
+    Mod+Shift+Right { consume-or-expel-window-right; }
 
     Mod+Comma  { consume-window-into-column; }
     Mod+Period { expel-window-from-column; }
@@ -237,8 +205,8 @@ binds {
     Mod+Shift+Minus { set-window-height "-10%"; }
     Mod+Shift+Equal { set-window-height "+10%"; }
 
-    Mod+V       { toggle-window-floating; }
-    Mod+Shift+V { switch-focus-between-floating-and-tiling; }
+    Mod+Space      { toggle-window-floating; }
+    Mod+Shift+Space { switch-focus-between-floating-and-tiling; }
 
     Mod+W { toggle-column-tabbed-display; }
 

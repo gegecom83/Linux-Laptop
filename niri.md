@@ -121,7 +121,7 @@ sudo systemctl enable --now power-profiles-daemon.service
 - niri with a few additional packages according to my personal preferences.
 
 ```bash
-sudo pacman -S niri alacritty fuzzel mako swaybg swayidle waybar rofi libnotify playerctl brightnessctl blueman xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-user-dirs polkit-gnome pavucontrol xorg-xwayland  xwayland-satellite firefox thunderbird thunar mousepad xfce4-terminal network-manager-applet zip unrar 7zip unzip ristretto gimp thunar-archive-plugin gvfs xarchiver gnome-keyring git base-devel devtools man-db man-pages bash-completion pacman-contrib ntfs-3g fuse2 fuse2fs fuse3 exfatprogs libappimage gspell wl-clipboard wl-clip-persist libadwaita adwaita-cursors adwaita-fonts adwaita-icon-theme gnome-themes-extra papirus-icon-theme keepassxc otf-font-awesome htop mpv ttf-nerd-fonts-symbols xdg-utils
+sudo pacman -S niri alacritty fuzzel mako swaybg swayidle waybar rofi libnotify playerctl brightnessctl blueman xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-user-dirs polkit-gnome pavucontrol xorg-xwayland  xwayland-satellite firefox thunderbird thunar mousepad xfce4-terminal network-manager-applet zip unrar 7zip unzip ristretto gimp thunar-archive-plugin gvfs xarchiver gnome-keyring git base-devel devtools man-db man-pages bash-completion pacman-contrib ntfs-3g fuse2 fuse2fs fuse3 exfatprogs libappimage gspell wl-clipboard wl-clip-persist libadwaita adwaita-cursors adwaita-fonts adwaita-icon-theme gnome-themes-extra papirus-icon-theme keepassxc otf-font-awesome btop mpv ttf-nerd-fonts-symbols xdg-utils xf86-video-intel vulkan-intel
 ```
 
 ### Autostart niri after logging
@@ -262,12 +262,98 @@ git clone https://github.com/gegecom83/Linux-Laptop.git
 
 ## My customization
 
-### Dark themes
+### Dracula themes
+
+ - Download from [Git](git clone https://github.com/dracula/gtk.git) (Once extracted it must be renamed from `gtk-master` to `Dracula`).
+ 
+ - Extract the `.zip` file to the themes directory i.e. `~/.themes/` (create it if necessary).
+
+ - To activate the theme run the following commands in Terminal:
 
 ```bash
-gsettings set org.gnome.desktop.interface gtk-theme Adwaita-dark
-gsettings set org.gnome.desktop.interface color-scheme prefer-dark
-gsettings set org.gnome.desktop.interface icon-theme Papirus-Dark
+gsettings set org.gnome.desktop.interface gtk-theme "Dracula"
+gsettings set org.gnome.desktop.wm.preferences theme "Dracula"
+gsettings set org.gnome.desktop.interface color-scheme "prefer-dark"
+gsettings set org.gnome.desktop.interface icon-theme "Papirus-Dark"
+```
+#### Code - OSS
+
+ - Install the theme directly from Extension.
+
+#### Firefox
+
+ - Install the theme directly from Firefox Addons.
+
+
+#### Thunderbird
+
+- Install the theme directly from Thunderbird Themes.
+
+#### xfce4-terminal
+
+ - Download from [Git] git clone https://github.com/dracula/xfce4-terminal.git.
+
+ - Activating theme
+
+    Put Dracula.theme in ~/.local/share/xfce4/terminal/colorschemes
+
+
+#### Alacritty
+
+ - Download from [Git] git clone https://github.com/dracula/alacritty.git
+
+ - Activating theme
+
+    Import dracula.toml in ~/.config/alacritty/alacritty.toml.
+
+```bash
+general.import = ["/path/to/dracula.toml"]
+```
+
+#### rofi
+
+ - Download from [Git] git clone https://github.com/dracula/rofi cp rofi/theme/config1.rasi ~/.config/rofi/config.rasi 
+
+
+#### Mousepad
+
+ - Download from [Git] git clone https://github.com/dracula/mousepad.git && cd mousepad
+
+ - Create a folder inside your $HOME folder
+
+```bash
+mkdir -p $HOME/.local/share/gtksourceview-3.0/styles
+```
+
+ - Copy the dracula.xml
+
+```bash
+cp dracula.xml ~/.local/share/gtksourceview-4/styles
+```
+ - Go to Edit > Preferences > View > Color scheme > Dracula
+
+#### Swaylock
+
+ - Download from [Git] git clone https://github.com/dracula/swaylock.git
+
+```bash
+cp -rv swaylock/ ~/.config/
+```
+
+#### Mako
+
+ - Download from [Git] git clone https://github.com/dracula/mako.git
+
+ - Copy config to ~/.config/mako/config
+    makoctl reload
+
+### papirus-folders
+
+```bash
+paru papirus-folders-git
+```
+```bash
+papirus-folders -C yaru --theme Papirus-Dark
 ```
 
 ### Qt6 Settings

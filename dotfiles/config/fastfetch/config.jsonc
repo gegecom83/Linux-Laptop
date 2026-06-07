@@ -1,0 +1,126 @@
+{
+    "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+    "logo": {
+          "type": "none",
+          "padding": {
+             "top": 1,
+             "left": 0,
+             "right": 0
+        }
+    },
+    "display": {
+        "color": {
+            "keys": "blue"
+        },
+        "separator": "",
+        "constants": [
+            "──────────────────────────────────────────────────────",   // {$1} - horizontal line for borders
+            "\u001b[55D",                                               // {$2} - move cursor left 55 columns
+            "\u001b[55C",                                               // {$3} - move cursor right 55 columns
+            "\u001b[54C"                                                // {$4} - move cursor right 54 columns
+        ],
+        "brightColor": true
+    },
+    "modules": [
+
+        {
+            "type": "custom",
+            "key": " {#35}┌─────────────┬{$1}┐{#keys} \u001b[37D",
+            "format": ""
+        },
+        {
+            "type": "os",
+            "key": " {#35}│ OS          │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "kernel",
+            "key": " {#35}│ Kernel      │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "de",
+            "key": " {#35}│ Desktop     │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "wm",
+            "key": " {#35}│ Session     │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "packages",
+            "key": " {#35}│ Packages    │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "custom",
+            "key": " {#35}└─────────────┴{$1}┘{#keys} ",
+            "format": ""
+        },
+        {
+            "type": "custom",
+            "key": " {#35}┌─────────────┬{$1}┐{#keys} \u001b[37D",
+            "format": ""
+        },
+        {
+            "type": "host",
+            "key": " {#35}│ Machine     │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "display",
+            "key": " {#35}│ Monitor     │{$4}│{#keys} {$2}",
+        },
+        {
+            "type": "cpu",
+            "key": " {#35}│ CPU         │{$4}│{#keys} {$2}",
+            "format": "{name} @{freq-max}",
+            "showPeCoreCount": false
+        },
+        {
+            "type": "gpu",
+            "key": " {#35}│ GPU         │{$4}│{#keys} {$2}"
+        },
+        {
+            "type": "custom",
+            "key": " {#35}└─────────────┴{$1}┘{#keys} "
+        },
+
+        // Hardware section with cyan color theme
+        {
+            "type": "custom",
+            "key": " {#35}┌─────────────┬{$1}┐{#keys} \u001b[37D",
+            "format": ""
+        },
+        {
+            "type": "memory",
+            "key": " {#35}│ RAM         │{$4}│{#keys} {$2}",
+            // "keyColor": "34",
+            "percent": {
+                "type": 3, // 3 = show number + bar + percentage
+                "green": 30, // <30% is green
+                "yellow": 70 // 30-70% is yellow, >70% is red
+            }
+        },
+        {
+            "type": "swap",
+            "key": " {#35}│ SWAP        │{$4}│{#keys} {$2}",
+            // "keyColor": "34",
+            "percent": {
+                "type": 3, // 3 = show number + bar + percentage
+                "green": 30, // <30% is green
+                "yellow": 70 // 30-70% is yellow, >70% is red
+            }
+        },
+        {
+            "type": "disk",
+            "key": " {#35}│ Disk        │{$4}│{#keys} {$2}",
+            // "keyColor": "34",
+            "percent": {
+                "type": 3, // 3 = show number + bar + percentage
+                "green": 30, // <30% is green
+                "yellow": 70 // 30-70% is yellow, >70% is red
+            },
+        },
+        {
+            "type": "custom",
+            "key": " {#35}└─────────────┴{$1}┘{#keys} ",
+            "format": ""
+        },
+    ]
+}
