@@ -1,8 +1,5 @@
-sort=-time
-layer=overlay
-background-color=#000000b3
+background-color=#282a36
 progress-color=#6272a4
-border-radius=5
 border-size=1
 
 [urgency=low]
