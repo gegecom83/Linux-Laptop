@@ -11,7 +11,7 @@ window#waybar {
 
 .modules-center {
     padding-right: 50px;
-    padding-left: 10px;
+    padding-left: 50px;
 }
 
 #workspaces button,
@@ -82,7 +82,7 @@ window#waybar {
 }
 
 #language {
-    background-color: #50FA7B;
+    background-color: #FF79C6;
 }
 
 #battery {
