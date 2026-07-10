@@ -121,7 +121,7 @@ sudo systemctl enable --now power-profiles-daemon.service
 - niri with a few additional packages according to my personal preferences.
 
 ```bash
-sudo pacman -S niri alacritty fuzzel mako swaybg swayidle waybar rofi libnotify playerctl brightnessctl blueman xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-user-dirs polkit-gnome pavucontrol xorg-xwayland  xwayland-satellite firefox thunderbird thunar mousepad xfce4-terminal network-manager-applet zip unrar 7zip unzip ristretto gimp thunar-archive-plugin gvfs xarchiver gnome-keyring git base-devel devtools man-db man-pages bash-completion pacman-contrib ntfs-3g fuse2 fuse2fs fuse3 exfatprogs libappimage gspell wl-clipboard wl-clip-persist libadwaita adwaita-cursors adwaita-fonts adwaita-icon-theme gnome-themes-extra papirus-icon-theme keepassxc otf-font-awesome btop mpv ttf-nerd-fonts-symbols xdg-utils vim xf86-video-intel vulkan-intel
+sudo pacman -S niri alacritty fuzzel mako swaybg swayidle waybar rofi libnotify playerctl brightnessctl blueman xdg-desktop-portal-gtk xdg-desktop-portal-wlr xdg-user-dirs polkit-gnome pavucontrol xorg-xwayland  xwayland-satellite firefox thunderbird thunar mousepad xfce4-terminal network-manager-applet zip unrar 7zip unzip ristretto gimp thunar-archive-plugin gvfs xarchiver gnome-keyring git base-devel devtools man-db man-pages bash-completion pacman-contrib ntfs-3g fuse2 fuse2fs fuse3 exfatprogs libappimage gspell wl-clipboard wl-clip-persist libadwaita adwaita-cursors adwaita-fonts adwaita-icon-theme gnome-themes-extra papirus-icon-theme keepassxc otf-font-awesome btop mpv ttf-nerd-fonts-symbols xdg-utils vim xf86-video-intel vulkan-intel rust
 ```
 
 ### Autostart niri after logging
@@ -314,7 +314,6 @@ general.import = ["/path/to/dracula.toml"]
 
  - Download from [Git] git clone https://github.com/dracula/rofi cp rofi/theme/config1.rasi ~/.config/rofi/config.rasi 
 
-
 #### Mousepad
 
  - Download from [Git] git clone https://github.com/dracula/mousepad.git && cd mousepad
@@ -397,7 +396,25 @@ fc-cache -fv
 winetricks cjkfonts
 ```
 ```bash
-sudo pacman -S code distrobox podman
+sudo pacman -S code distrobox podman qbittorrent
+```
+
+### Install for my games
+
+ - Repositories for 32bits
+
+```bash
+sudo nano /etc/pacman.conf
+```
+```bash
+[...]
+[multilib]
+Include = /etc/pacman.d/mirrorlist
+[...]
+```
+
+```bash
+sudo pacman -S lib32-mesa lib32-sdl2-compat lib32-vulkan-intel lib32-wayland
 ```
 
 ### Browse network
