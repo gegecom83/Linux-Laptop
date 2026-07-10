@@ -412,7 +412,9 @@ sudo nano /etc/pacman.conf
 Include = /etc/pacman.d/mirrorlist
 [...]
 ```
-
+```bash
+sudo pacman -Syu
+```
 ```bash
 sudo pacman -S lib32-mesa lib32-sdl2-compat lib32-vulkan-intel lib32-wayland
 ```
