@@ -190,7 +190,7 @@ paru swaylock-effects
 paru arch-update
 ```
 ```bash
-systemctl --user enable --now arch-update.timer
+arch-update --check --enable
 ```
 ```bash
 arch-update --gen-config
