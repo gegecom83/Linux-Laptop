@@ -5,8 +5,10 @@
 }
 
 window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
+    background-color: rgba(40, 42, 54, 1);
     color: #FFFFFF;
+
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .modules-center {
@@ -70,6 +72,7 @@ window#waybar {
 
 #idle_inhibitor {
     background-color: #3B4252;
+    color: #ECEFF4;
 }
 
 #idle_inhibitor.activated {
